@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <title>RPG Login</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <h2>Bem-vindo ao Reino de Britania</h2>
+
+  <button class="toggle-btn" onclick="toggleSection('login-section')">Fazer Login</button>
+  <section id="login-section" class="abertura">
+   <h3>Login</h3>
+    <input id="login-user" placeholder="Usuário" type="text"/>
+    <input id="login-pass" type="password" placeholder="Senha" />
+    <button onclick="login()">Entrar</button>
+  </section>
+
+  <button class="toggle-btn" onclick="toggleSection('register-section')">Registrar Conta</button>
+  <section id="register-section" class="abertura">
+    <h3>Cadastro</h3>
+    <input id="reg-user" placeholder="Usuário" type="text" />
+    <input id="reg-pass" type="password" placeholder="Senha" />
+  </section>
+
+  <section class="accordion always-open">
+    <h3>Personalizar Personagem</h3>
+    <input id="forca" type="number" placeholder="Força (1-10)" min="0" max="10"/>
+    <input id="defesa" type="number" placeholder="Defesa (1-10)" step="
+    1" max="10" />
+    <input id="inteligencia" type="number" placeholder="Inteligência (1-10)" />
+    <input id="velocidade" type="number" placeholder="Velocidade (1-10)" />
+    <input id="cura" type="number" placeholder="Cura (1-10)" />
+
+    <div id="pele">
+  <p>Tom de pele:</p>
+  <label><input type="radio" name="skin" value="clara" /> Clara</label>
+  <label><input type="radio" name="skin" value="morena" /> Morena</label>
+  <label><input type="radio" name="skin" value="negra" /> Negra</label>
+  <label><input type="radio" name="skin" value="verde" /> Verde</label>
+  <label><input type="radio" name="skin" value="azul" /> Azul</label>
+</div>
+<div id="classe-personagem">
+  <p>Classe do personagem:</p>
+  
+  <label>
+    <input type="radio" name="classe" value="assassino">
+    🗡️ Assassino
+  </label>
+
+  <label>
+    <input type="radio" name="classe" value="mago">
+    🔮 Mago
+  </label>
+
+  <label>
+    <input type="radio" name="classe" value="tanque">
+    🛡️ Tanque
+  </label>
+
+  <label>
+    <input type="radio" name="classe" value="arqueiro">
+    🏹 Arqueiro
+  </label>
+
+  <label>
+    <input type="radio" name="classe" value="curandeiro">
+    ✨ Curandeiro
+  </label>
+</div>
+
+          <p>Cor do cabelo <input id="cor-cabelo" type="color"></p>
+
+   
+    <button type="button" onclick="register()">Cadastrar</button>
+
+  </section>
+
+  <div id="music-control">
+  <button id="musica">🔊 Música</button>
+  <input type="range" id="volume" min="0" max="1" step="0.01" value="0.5">
+</div>
+
+<audio id="musica-fundo" loop>
+  <source src="/estrutura/audio/theme.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+  function toggleSection(id) {
+    const section = document.getElementById(id);
+    section.classList.toggle("visible");
+  }
+</script>
+
+
+<script src="/estrutura/engrenagens/script.js"></script>
+
+
+</body>
+</html>
